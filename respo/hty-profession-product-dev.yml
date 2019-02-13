@@ -1,1 +1,30 @@
-
+#配置数据源
+spring:
+  datasource:
+    druid:
+      type: '{cipher}AQBMWf+oje3sGbrU30aaqyhgSSwpSzDl830A1OQbO0cxUP6LSqpt2o1aZLA8MeZJQ04ZghfVXc9xSvZztyAYjnJB5YaqF/5MHY8AD1mQol+3hpXoi6QskZBsXW4y498utiBJbsRpz/p6PjSFM+BGMTJ11HSD6ab+osArKqBxVZ/yVqhPHfNiCLz2ceQd4cvEgrk1+xaZJAqxYL0Brm6HRZGnQ4slsf0vvOXOKOUHHvSx/eVyq3ZlF1vqywISd71L2saon9pYUmxQ/UdAE161sBa4fqTxJ7awYzjjFPkZROE++8+dTOwCzJbWEnFOFa3qesOvwnW6nFvquJ2dfVDe1bRGQ3V9myFMUAgRWELoxBACriist/1cLDKXu2tSOCBMo/ysjEE0FAoMM51Mw/yG4q0BYX6Kd+z7QrlZ7kbH/cLz2A=='
+      driverClassName: '{cipher}AQB5Vs0/f9SMX0TIzvVPsfa1o9EjAk7gitD6f5Wk8o3vSgF3qGjCmKTzTgAmaVSf9V167HO7GjnPdR6LpB1JYb88TlB9XY5nV0sIkoXJirnggIuWUB6j3jG4thEnHYhk7MtF+zkf/UkE3AF4jre85IqDB/vvSNTziQBMvx3yINxXSu9K2xUpRvkuH5VJJufxj8sFkIbDQ+uoki2ZaN29rZj8PJ8q/at9t89yp21+v/3efRxOZ7SFYQjbZu5ZjPX3RKHotK32uA/YTEG1ILoub0A5W7SzG6iR2VOXTpWnBPbCiudKS08xg5mDvLMWQn8+Z3DXcIBXsQ3cuVLiJhEiXL8V7PbOve6vBsEbcWe/eraZd/kbsqJLvtGGRuFMhCjKfVu0Vyf34Wd9B357Q9sIRLhxXE9zCjgb9OjKT4ViNpVcLg=='
+      url: 'AQB8ALvchYu/81UlCI1IPWUqmzzRuEBK34iL4B0pzQgWSaxjOoNPiLbiD+n/9lRYq2EpzAasAF+o2IiUeMkgAeEyPU0I16kIQZYEt68agVrXN4Zq3QrxGe1Ai9zA6FjMPKuN8cnQg8fntoosMKG0/oe6TidSjq6+W4E8lzL/BxmwE+VI/NslF0Ttlgi6j3QTRHcoSRaJAa9Qwcw1EXQWPe9jBqqfH4cwG1bzwd78EVcKUryGAOZMbDQgUbCkxaQJFWnhW8agQAGl8zuUEdqqnPID5oMQtlwb1eMEJcBXXi6sHU21u2tkWIwVkLnxwcR1kwp3LGl0OW8K6Sf6tzPCi+sP7yX5kVwGvJ7gbT9WkR6ClEqstuxBQtPaxYGmpIPpAxEZHgJxSVXGWV2/0s+7gwMweiVKWD6/uAwfRLp4fE4J1uJIlRo2A1UIJaHqnEn7GMXAknMcGY+JwU+lZHVcR4lPSiSU/o0ApKgpfw0WSDD/j6kxY60BV1iJ977wOnHX0mWf0aIFu2CSVWy4L43/eibK'
+      username: '{cipher}AQCFSy4ZEB3qhpovX1XY9M/bePl5FCje6rxfq6sPvn3IU4Ij6VYdiJklobwvsu9LIp1Cpi2GskNHKUkfjtFR/85Q3XYvnpVSEAku3V2x3TpeIrnX0xpYsqg+7g/LAtuteF5PWuBtx/ZU+0xgyhByc6tm1lOkvZmOg8YFH4IMCmsNvcfyFg9s77nr3LCj5l8+vq19o3OMHemPC/ADda1mHOGacyWMbYYvopoCRej4ayiTXK7XQdqYftWIUTM1xxZlm1gm6cy5kcO93g1IlgdoqAgvmSyxw4pOZoASBOmUHYoDC/+uo7zkZ9S7Wz+hqNdRMzt0onDOFmfBCNJJBvJdDGY1l+BwvYLv8/9E10JkU8GU1qTykUFhqGsU14E6W4zSjZs='
+      password: '{cipher}AQCFSy4ZEB3qhpovX1XY9M/bePl5FCje6rxfq6sPvn3IU4Ij6VYdiJklobwvsu9LIp1Cpi2GskNHKUkfjtFR/85Q3XYvnpVSEAku3V2x3TpeIrnX0xpYsqg+7g/LAtuteF5PWuBtx/ZU+0xgyhByc6tm1lOkvZmOg8YFH4IMCmsNvcfyFg9s77nr3LCj5l8+vq19o3OMHemPC/ADda1mHOGacyWMbYYvopoCRej4ayiTXK7XQdqYftWIUTM1xxZlm1gm6cy5kcO93g1IlgdoqAgvmSyxw4pOZoASBOmUHYoDC/+uo7zkZ9S7Wz+hqNdRMzt0onDOFmfBCNJJBvJdDGY1l+BwvYLv8/9E10JkU8GU1qTykUFhqGsU14E6W4zSjZs='
+      initial-size: 5      # 初始化连接大小
+      min-idle: 5       # 最小空闲连接数
+      max-active: 20
+      max-wait: 30000
+      time-between-eviction-runs-millis: 60000    # 可关闭的空闲连接间隔时间
+      min-evictable-idle-time-millis: 300000     # 配置连接在池中的最小生存时间
+      validation-query: select '1' from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters
+      filters: stat
+      stat-view-servlet:
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: '{cipher}AQBYDkZ6tsDjmNt/4UkTOi3t+agiSaa+eX4NdldQ+abKgHiSBEtZjqclabGTXGrtDIZ1siQatX6yMnGyF1zliGN2yVmLfjJuZ4Agh1SfiZE6SPZXggYclVhprwkVlpA9R8hlGKSRh4b2+S/qxFxuvm5jbuWWef4/nSEJCmWf/KK5IbtdreNt9Sagl/7j4oDDMndRprt8FD1RTlqJrFv6Ekb52duyXnrxxtKlrpcxp38WxiqbFYsJQtVLvPWuJPfEnXeJZ53n8OEDOU7A5if1SYrkSLuBaeTE0T3/Vkm30D5S2iDYSJQvY/mEjKoyfVQqzCegonWeLERresH/PfnzT+KPMeSGFFY7Zpze+jpyk+43we4/EPF8Bezn72yYh+v3mqI='
+        login-password: '{cipher}AQA2cs9BM+hyTTRiRhI0ZxGESYZ4qL6gRN7d3N/bfPN+M/pzQQaMHMa2+piee1IcFCnecT6LrHYLfa64HrtFO3SbaXNuj6ce7HQg2sW5fedCzNAhS2kTnhjBBlkjCQ6Jjmi23dbbEhdd4G41yH5ibwbi3MfSHfaI6M3eFc0RmVVmRijGkDBuWR4wxGSzEshBxycfo/Fi8IXHuGVD1QyFpnPO/znenWhwu6Kg08N+d26UJ50OEAUlDNSOuhnaQfW6TvlFqROUqtrqz0r6338zDV5PPWnl/AuSJixXgMZBL2TsZYTSdfcSF7EWfsQmwsYXpLn6QqSrJb/0DMARpXdbckcOgBu+v1uioOagfgcIsz1VyO/5MWxIJQYhN5Vjjs8AkgM='
