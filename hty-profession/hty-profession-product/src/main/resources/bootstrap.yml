@@ -1,0 +1,48 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.191.1
+      port: 8500
+      discovery:
+        register: true
+        hostname: 192.168.191.1
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    config:
+      uri: http://127.0.0.1:8080/
+      label: master  #配置文件所在分支
+      profile: dev
+    bus:
+      refresh:
+        enabled: true
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.profiles.active:${local.server.port:${server.port:0}}}}:${vcap.application.instance_id:${random.value}}
+
+#防止访问超时报错
+hystrix:
+  command:
+    default:  #默认超时时间设置
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000   #默认超时时间3秒
+
+fegin:
+  hystrix:
+    enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug

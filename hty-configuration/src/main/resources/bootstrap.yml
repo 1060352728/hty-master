@@ -1,0 +1,41 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.191.1
+      port: 8500
+      discovery:
+        register: true
+        hostname: 192.168.191.1
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    config:
+      server:
+        git:
+          uri: https://github.com/1060352728/hty-master/
+          username:
+          password:
+          searchPaths: respo
+      label: master
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #暴露所有的接口  bus-refresh
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    org.springframework.cloud.bus: trace

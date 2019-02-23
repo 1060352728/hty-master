@@ -1,0 +1,13 @@
+server:
+  port: 8810
+spring:
+  profiles:
+    active: dev
+  application:
+    name: @pom.artifactId@
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+    - classpath*:mapping/**/*.xml

@@ -1,0 +1,65 @@
+spring:
+  rabbitmq:
+    host: ${RABBIT_MQ_HOST:localhost}
+    port: ${RABBIT_MQ_PORT:5672}
+    username: ${RABBIT_MQ_USERNAME:guest}
+    password: ${RABBIT_MQ_PASSWORD:guest}
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+  security:
+    oauth2:
+      jwt:
+        signingKey: 123456
+  cloud:
+    consul:
+      host: 192.168.191.1
+      port: 8500
+      discovery:
+        register: true
+        hostname: 192.168.191.1
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    gateway:
+      routes:
+      #------------------------------------------------------------------------
+      - id: hty-oauth
+        uri: lb://authorization-server
+        predicates:
+        - Path=/api-ams/**
+        filters:
+        - StripPrefix=1
+      #------------------------------------------------------------------------
+      - id: hty-profession-member
+        uri: lb://hty-profession-member
+        predicates:
+        - Path=/api-mcs/**
+        filters:
+        - StripPrefix=1
+      #------------------------------------------------------------------------
+      - id: hty-profession-order
+        uri: lb://hty-profession-order
+        predicates:
+        - Path=/api-ocs/**
+        filters:
+        - StripPrefix=1
+      #------------------------------------------------------------------------
+      - id: hty-profession-product
+        uri: lb://hty-profession-product
+        predicates:
+        - Path=/api-pcs/**
+        filters:
+        - StripPrefix=1
+gate:
+  ignore:
+    authentication:
+      startWith: /oauth,/open
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
