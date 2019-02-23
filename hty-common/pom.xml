@@ -14,6 +14,11 @@
     <name>hty-common</name>
     <description>微服务公共类，工具，枚举，返回码等</description>
 
+    <modules>
+        <module>hty-common-base</module>
+        <module>hty-common-utils</module>
+    </modules>
+
     <dependencies>
         <!-- springboot核心jar，内置tomcat-->
         <dependency>

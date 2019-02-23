@@ -16,6 +16,7 @@
 
     <modules>
         <module>hty-profession-product-api</module>
+        <module>hty-profession-member-api</module>
     </modules>
 
     <!-- 引用bean-->

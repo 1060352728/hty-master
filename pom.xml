@@ -18,7 +18,12 @@
     <modules>
         <module>hty-configuration</module>
         <module>hty-gateway</module>
+        <module>hty-oauth</module>
+        <module>hty-common</module>
+        <module>hty-payment</module>
+        <module>hty-payment-api</module>
         <module>hty-profession</module>
+        <module>hty-profession-api</module>
     </modules>
 
     <properties>
