@@ -14,7 +14,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/1060352728/hty-master/
+          uri: https://github.com/1060352728/hty-master-config/
           username:
           password:
           searchPaths: respo
